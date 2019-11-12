@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="RuleScape Test Accelerator Update Site">
+      The update site for the RuleScape plugin to accelerate developer testing of ODM decision services.
+   </description>
+   <feature url="features/test-accelerator-feature_1.0.0.201911120031.jar" id="test-accelerator-feature" version="1.0.0.201911120031">
+      <category name="rulescape-odm-test-accelerator"/>
+   </feature>
+   <category-def name="rulescape-odm-test-accelerator" label="RuleScape ODM Test Accelerator"/>
+</site>
