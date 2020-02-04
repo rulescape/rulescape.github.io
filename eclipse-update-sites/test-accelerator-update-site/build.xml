@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<!--
+RuleScape Project generator
+ 
+  R Rao - clean update site. Run this before doing a buildAll in site.xml.
+ -->
+
+<project name="RuleScapeProjectAcceleratorUpdateSite" basedir="." default="clean">
+
+
+	<target name="clean">
+		<delete verbose="true">
+			<fileset dir="${basedir}" includes="**/*.jar" />
+		</delete>
+	</target>
+
+</project>
+
