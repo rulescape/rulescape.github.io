@@ -3,16 +3,35 @@
 RuleScape Project generator
  
   R Rao - clean update site. Run this before doing a buildAll in site.xml.
+  
+  Steps:
+  1. run 'clean'
+  2. Click on BuildAll in ./site.xml
+  3. run 'copyToUpdatesiteGit'
+  4. go to git bash and go to /d/Users/rkalm/Source/Repos/RuleScapeGitHub/rulescape.github.io
+  5. git add -a; git commit -a -m "<comment here>"
+  6. git push
  -->
 
 <project name="RuleScapeProjectAcceleratorUpdateSite" basedir="." default="clean">
 
-
+	<property name="github.dir" value="${basedir}/../../../RuleScapeGitHub/rulescape.github.io/eclipse-update-sites"/>
+	<property name="update.site.name" value="test-accelerator-update-site"/>
+	
 	<target name="clean">
 		<delete verbose="true">
 			<fileset dir="${basedir}" includes="**/*.jar" />
 		</delete>
 	</target>
-
+	<target name="copyToUpdateSiteGit">
+		<delete verbose="true">
+			<fileset dir="${github.dir}" includes="**/*.jar" />
+		</delete>
+		<copy todir="${github.dir}">
+			<fileset dir="${basedir}/..">
+				<include name="${update.site.name}/**/*.*" />
+			</fileset>
+		</copy>
+	</target>
 </project>
 
